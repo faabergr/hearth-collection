@@ -6,26 +6,13 @@
 </head>
 <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
 <body ng-app="deckManagerApp">
-<div ng-controller="cardListCtrl">
-    <div>
-        <input type="text" ng-model="filterText" />
-    </div>
-<table class="table">
-    <tr>
-        <th>Name</th>
-        <th>Hero</th>
-        <th>Category</th>
-        <th>Set</th>
-    </tr>
-    <tr ng-repeat="card in cards | filterCards: filterText">
-        <td>{{card.name}}</td>
-        <td>{{card.hero}}</td>
-        <td>{{card.category}}</td>
-        <td>{{card.set}}</td>
-    </tr>
-</table>
-</div>
+<h1>Hearthstone Deck Manager</h1>
+<div ng-view class="container"></div>
+
 <script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/angular-route/angular-route.min.js"></script>
+
+<script src="app/app.js"></script>
 <script src="app/cardList.js"></script>
 </body>
 </html>

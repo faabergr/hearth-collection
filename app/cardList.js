@@ -4,9 +4,9 @@
 (function() {
     "use strict";
 
-    var deckManagerApp = angular.module('deckManagerApp', []);
+    var deckManagerApp = angular.module('deckManagerApp');
 
-    deckManagerApp.controller('cardListCtrl', ['$scope', '$http', function($scope, $http) {
+    deckManagerApp.controller('CardListCtrl', ['$scope', '$http', function($scope, $http) {
         $http.get('data/all-cards.json')
             .success(function(data, status, headers, config ) {
                 $scope.cards = data.cards;

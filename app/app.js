@@ -5,7 +5,11 @@
        $routeProvider
            .when("/cardList", {
                templateUrl: 'app/views/cardlist.html',
-               controller: "CardListCtrl"
+               controller: 'CardListCtrl'
+           })
+           .when("/card/:id", {
+               templateUrl: 'app/views/card.html',
+               controller: 'CardCtrl'
            })
            .otherwise({redirectTo: "/cardList"});
     });

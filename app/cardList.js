@@ -6,13 +6,13 @@
 
     var deckManagerApp = angular.module('deckManagerApp');
 
-    deckManagerApp.controller('CardListCtrl', ['$scope', '$http', function($scope, $http) {
-        $http.get('data/all-cards.json')
-            .success(function(data, status, headers, config ) {
-                $scope.cards = data.cards;
-            })
-            .error(function(data, status, headers, config) {
-                console.log('error');
+    deckManagerApp.controller('CardListCtrl', ['$scope', 'hearthstoneRepo', function($scope, hearthstoneRepo) {
+        hearthstoneRepo.getAllCards()
+            .then(function(response) {
+                $scope.cards = response;
+            },
+            function() {
+                console.log('failure');
             });
     }]);
 

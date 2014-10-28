@@ -10,7 +10,7 @@
         console.log('id is ' + id);
         hearthstoneRepo.getCard(id)
             .then(function(card) {
-                $scope.name = card.name;
+                $scope.card = card;
             });
     }]);
 }());
